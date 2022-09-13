@@ -35,5 +35,15 @@ public class Main {
                         .collect(Collectors.toList())
         );
         LOGGER.info("Task C + D: " + resultOptional);
+
+        Multiplier<Integer> mult = (x) -> x * 2;
+        List<Integer> doubledResult = new ArrayList<>(
+                resultOptional
+                        .stream()
+                        .map(mult::multiplyInt)
+                        .collect(Collectors.toList())
+        );
+
+        LOGGER.info("Task 3 " + doubledResult);
     }
 }
